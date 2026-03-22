@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://huochaiai.pages.dev/sitemap.xml

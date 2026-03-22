@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>火柴AI外贸获客软件 | AI智能引流 · 搜索排名优化首选</title>
+    <meta name="description" content="火柴AI外贸获客软件，AI驱动WhatsApp、TikTok、Facebook等社媒精准引流，提升海外搜索排名，助力外贸企业获客飞升。免费诊断联系 @aiclawchuhai。">
+    <meta name="keywords" content="外贸获客软件, 火柴AI, 搜索排名优化, WhatsApp营销, TikTok矩阵, 社媒引流, AI获客, 外贸推广">
+    <meta name="author" content="火柴AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://huochai.ai/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://huochai.ai/">
+    <meta property="og:title" content="火柴AI外贸获客软件 | AI智能引流 · 搜索排名优化首选">
+    <meta property="og:description" content="AI驱动全球获客，提升搜索排名，覆盖WhatsApp、TikTok、Facebook全渠道。联系官方顾问 @aiclawchuhai。">
+    <meta property="og:image" content="https://placehold.co/1200x630/0f2a1f/c9a87c?text=火柴AI">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "火柴AI外贸获客软件",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Windows, macOS, iOS, Android",
+      "description": "AI驱动的跨境营销软件，帮助外贸企业通过WhatsApp、TikTok、Facebook等渠道精准获客，提升海外搜索排名，实现业绩倍增。",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CNY", "availability": "https://schema.org/OnlineOnly"},
+      "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "15800"},
+      "brand": {"@type": "Brand", "name": "火柴AI"}
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', 'Noto Serif SC', sans-serif;
+            background: #0a1a12;
+            color: #eef2e6;
+            overflow-x: hidden;
+            line-height: 1.5;
+            opacity: 0;
+            animation: bodyFadeIn 0.8s ease forwards;
+        }
+        @keyframes bodyFadeIn { to { opacity: 1; } }
+        .bg-mist {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #0f281c 0%, #030f09 100%);
+            z-index: 0;
+        }
+        #mist-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.45;
+            pointer-events: none;
+        }
+        .mountain-silhouette {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path fill="rgba(50,85,65,0.35)" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".3"></path></svg>') repeat-x bottom;
+            background-size: 1200px 120px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .content { position: relative; z-index: 10; }
+        .cursor-glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201,168,124,0.2) 0%, rgba(201,168,124,0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 20;
+            transform: translate(-50%, -50%);
+            transition: transform 0.05s ease;
+            filter: blur(30px);
+        }
+        .container { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 5%; }
+        .navbar {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 26, 18, 0.7);
+            border-bottom: 1px solid rgba(201,168,124,0.25);
+            z-index: 100;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) { .nav-inner { flex-direction: column; gap: 0.8rem; padding: 0.8rem 1.5rem; } }
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #f3e5c0, #c9a87c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo i { color: #c9a87c; margin-right: 6px; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a {
+            text-decoration: none;
+            color: #eef2e6;
+            font-weight: 500;
+            transition: 0.2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c9a87c;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: #c9a87c; }
+        .hero {
+            padding: 5rem 0 3rem;
+            display: flex;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        @media (max-width: 992px) { .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; } }
+        .hero-left h1 {
+            font-size: clamp(2.2rem, 7vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #f3e5c0, #c9a87c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+        .hero-left p {
+            font-size: 1.1rem;
+            color: #cfd5c0;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+        @media (max-width: 992px) { .hero-left p { margin: 0 auto 2rem; } }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        @media (max-width: 992px) { .hero-buttons { justify-content: center; } }
+        .btn-primary, .btn-outline {
+            padding: 0.8rem 2rem;
+            border-radius: 48px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-primary::before, .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+            z-index: -1;
+        }
+        .btn-primary:hover::before, .btn-outline:hover::before { width: 300px; height: 300px; }
+        .btn-primary {
+            background: linear-gradient(95deg, #b28b54, #dbb87a);
+            color: #0f281c;
+            box-shadow: 0 0 12px rgba(201,168,124,0.4);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(201,168,124,0.7); }
+        .btn-outline {
+            border: 1px solid #c9a87c;
+            color: #eef2e6;
+            background: rgba(0,0,0,0.2);
+        }
+        .btn-outline:hover { background: rgba(201,168,124,0.15); transform: translateY(-2px); }
+        .hero-right {
+            background: rgba(30, 60, 45, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(201,168,124,0.4);
+        }
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .brand-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem;
+            border-radius: 1rem;
+            transition: all 0.2s;
+            background: rgba(0,0,0,0.2);
+        }
+        .brand-item i { font-size: 1.6rem; color: #c9a87c; }
+        .brand-item span { font-size: 0.7rem; color: #cfd5c0; }
+        .brand-item:hover { transform: translateY(-6px); background: rgba(201,168,124,0.25); }
+        .section { padding: 4rem 0; }
+        .section-header { text-align: center; margin-bottom: 2.5rem; }
+        .section-header h2 {
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 20%;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a87c, transparent);
+        }
+        .section-header p { color: #cfd5c0; max-width: 550px; margin: 0 auto; }
+        .grid-4, .grid-3 {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        @media (max-width: 1000px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .grid-4, .grid-3 { grid-template-columns: 1fr; }
+        }
+        .card, .product-card {
+            background: rgba(30, 60, 45, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 1.2rem;
+            border: 1px solid rgba(201,168,124,0.25);
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card { padding: 1.5rem; text-align: center; }
+        .product-card { overflow: hidden; }
+        .card::before, .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(201,168,124,0.1), transparent);
+            transition: left 0.6s;
+        }
+        .card:hover::before, .product-card:hover::before { left: 100%; }
+        .card:hover, .product-card:hover {
+            transform: translateY(-8px) rotateX(2deg);
+            border-color: #c9a87c;
+            box-shadow: 0 20px 30px -12px rgba(201,168,124,0.3);
+        }
+        .card-icon { font-size: 2rem; color: #c9a87c; margin-bottom: 1rem; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .card p { color: #cfd5c0; font-size: 0.85rem; }
+        .product-img {
+            height: 150px;
+            background: linear-gradient(145deg, #1e4634, #0e2a1f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #c9a87c;
+        }
+        .product-info { padding: 1.2rem; }
+        .product-info h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .product-info p { color: #cfd5c0; font-size: 0.8rem; }
+        .stats-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            flex: 1;
+            min-width: 150px;
+            background: rgba(0,0,0,0.35);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            text-align: center;
+            border: 1px solid rgba(201,168,124,0.3);
+            transition: all 0.3s;
+        }
+        .stat-card:hover { transform: translateY(-5px); border-color: #c9a87c; }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #c9a87c;
+        }
+        .stat-label { font-size: 0.75rem; margin-top: 0.3rem; color: #cfd5c0; }
+        .industry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem;
+            margin: 1.5rem 0;
+        }
+        .industry-tag {
+            background: rgba(201,168,124,0.1);
+            border: 1px solid rgba(201,168,124,0.4);
+            border-radius: 50px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .industry-tag:hover {
+            background: rgba(201,168,124,0.25);
+            transform: translateY(-2px);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        @media (max-width: 768px) { .testimonials-grid { grid-template-columns: 1fr; } }
+        .testimonial-card {
+            background: rgba(30, 60, 45, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            border: 1px solid rgba(201,168,124,0.25);
+            transition: all 0.3s;
+        }
+        .testimonial-card:hover { transform: translateY(-4px); border-color: #c9a87c; }
+        .testimonial-header { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.8rem; }
+        .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a87c, #9b7b4c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0f281c;
+        }
+        .cta {
+            background: linear-gradient(135deg, rgba(201,168,124,0.15), rgba(155,123,76,0.1));
+            border-radius: 2rem;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin: 3rem 0;
+            border: 1px solid rgba(201,168,124,0.5);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(201,168,124,0.1) 0%, transparent 70%);
+            animation: rotateSlow 20s linear infinite;
+        }
+        @keyframes rotateSlow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .telegram-btn {
+            background: #1f3f30;
+            border: 1px solid #c9a87c;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #c9a87c;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .telegram-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(201,168,124,0.4);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+            z-index: -1;
+        }
+        .telegram-btn:hover::after { width: 300px; height: 300px; }
+        .telegram-btn:hover {
+            background: #c9a87c;
+            color: #1f3f30;
+            box-shadow: 0 0 25px #c9a87c;
+            transform: translateY(-2px);
+        }
+        .copy-area {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        .tg-badge {
+            background: #1f3f30;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            border: 1px solid #c9a87c;
+        }
+        .copy-btn {
+            background: transparent;
+            border: 1px solid #c9a87c;
+            color: #c9a87c;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover {
+            background: #c9a87c;
+            color: #1f3f30;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(201,168,124,0.2);
+            color: #9eae98;
+            font-size: 0.75rem;
+        }
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a87c, #f3e5c0);
+            z-index: 200;
+            transition: width 0.1s ease;
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 3rem 0; }
+            .section { padding: 2.5rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-mist">
+    <canvas id="mist-canvas"></canvas>
+    <div class="mountain-silhouette"></div>
+</div>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<div class="content">
+    <div class="navbar">
+        <div class="nav-inner">
+            <div class="logo"><i class="fas fa-fire"></i> 火柴AI</div>
+            <div class="nav-links">
+                <a href="#features">核心能力</a>
+                <a href="#products">产品矩阵</a>
+                <a href="#contact">免费诊断</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-grid">
+                <div class="hero-left fade-up">
+                    <h1>火柴AI<br><span class="gradient-text">外贸获客·搜索排名首选</span></h1>
+                    <p>AI智能驱动 WhatsApp · TikTok · Facebook 全社媒引流，海外搜索排名飙升，精准触达全球买家</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary"><i class="fab fa-telegram"></i> 免费诊断</a>
+                        <a href="#products" class="btn-outline"><i class="fas fa-chart-line"></i> 查看产品</a>
+                    </div>
+                </div>
+                <div class="hero-right fade-up">
+                    <div class="brand-grid">
+                        <div class="brand-item"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></div>
+                        <div class="brand-item"><i class="fab fa-tiktok"></i><span>TikTok</span></div>
+                        <div class="brand-item"><i class="fab fa-facebook"></i><span>Facebook</span></div>
+                        <div class="brand-item"><i class="fab fa-instagram"></i><span>Instagram</span></div>
+                        <div class="brand-item"><i class="fab fa-twitter"></i><span>Twitter</span></div>
+                        <div class="brand-item"><i class="fab fa-telegram"></i><span>Telegram</span></div>
+                        <div class="brand-item"><i class="fab fa-youtube"></i><span>YouTube</span></div>
+                        <div class="brand-item"><i class="fas fa-envelope"></i><span>邮件营销</span></div>
+                        <div class="brand-item"><i class="fas fa-search"></i><span>SEO优化</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心能力 -->
+        <div id="features">
+            <div class="section-header fade-up">
+                <h2>AI驱动 · 搜索排名飞升</h2>
+                <p>让全球客户主动找到你</p>
+            </div>
+            <div class="grid-4">
+                <div class="card fade-up"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>搜索排名优化</h3><p>AI智能关键词布局，谷歌/社媒搜索排名首页，曝光提升300%</p></div>
+                <div class="card fade-up"><div class="card-icon"><i class="fas fa-microchip"></i></div><h3>AI精准获客</h3><p>深度学习买家画像，精准推荐高意向客户，转化率+200%</p></div>
+                <div class="card fade-up"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>磐石安全体系</h3><p>绿标账号矩阵 + 指纹隔离，账号存活率99.9%</p></div>
+                <div class="card fade-up"><div class="card-icon"><i class="fas fa-bolt"></i></div><h3>即装即用</h3><p>1小时部署，无需技术团队，即刻开启全球获客</p></div>
+            </div>
+        </div>
+
+        <!-- 产品矩阵 -->
+        <div id="products">
+            <div class="section-header fade-up">
+                <h2>全渠道 AI 营销矩阵</h2>
+                <p>覆盖主流社媒 · 一站式智能获客</p>
+            </div>
+            <div class="grid-3">
+                <div class="product-card fade-up"><div class="product-img"><i class="fab fa-whatsapp fa-3x"></i></div><div class="product-info"><h3>WhatsApp 磐石系统</h3><p>绿标号生产 · AI群发 · 智能客服 · 私域闭环</p></div></div>
+                <div class="product-card fade-up"><div class="product-img"><i class="fab fa-tiktok fa-3x"></i></div><div class="product-info"><h3>TikTok AI分身矩阵</h3><p>无人直播 · 矩阵养号 · 精准引流全球流量</p></div></div>
+                <div class="product-card fade-up"><div class="product-img"><i class="fas fa-share-alt fa-3x"></i></div><div class="product-info"><h3>社媒聚合AI矩阵</h3><p>FB/INS/TW/YT 多平台统一运营，提升搜索权重</p></div></div>
+                <div class="product-card fade-up"><div class="product-img"><i class="fas fa-envelope fa-3x"></i></div><div class="product-info"><h3>全球邮件AI群发</h3><p>全域后缀 · AI文案优化 · 高送达率</p></div></div>
+                <div class="product-card fade-up"><div class="product-img"><i class="fas fa-globe fa-3x"></i></div><div class="product-info"><h3>AI独立站+SEO优化</h3><p>智能建站 · 海外SEO · 本地化转化提升65%</p></div></div>
+                <div class="product-card fade-up"><div class="product-img"><i class="fas fa-headset fa-3x"></i></div><div class="product-info"><h3>AI智能客服</h3><p>7x24小时自动回复，多语言支持，替代70%人工</p></div></div>
+            </div>
+        </div>
+
+        <!-- 数据见证 -->
+        <div class="stats-grid" id="statsCounter">
+            <div class="stat-card fade-up"><div class="stat-number" data-target="15800">0</div><div class="stat-label">外贸企业选择</div></div>
+            <div class="stat-card fade-up"><div class="stat-number" data-target="168">0</div><div class="stat-label">覆盖国家/地区</div></div>
+            <div class="stat-card fade-up"><div class="stat-number" data-target="62700">0</div><div class="stat-label">月均客户匹配</div></div>
+            <div class="stat-card fade-up"><div class="stat-number" data-target="98.7">0</div><div class="stat-label">客户满意度%</div></div>
+        </div>
+
+        <!-- 行业方案 -->
+        <div class="section-header fade-up">
+            <h2>全行业外贸获客方案</h2>
+            <p>覆盖20+垂直领域，精准获客</p>
+        </div>
+        <div class="industry-tags fade-up">
+            <span class="industry-tag"><i class="fas fa-gamepad"></i> 游戏出海</span>
+            <span class="industry-tag"><i class="fas fa-chart-line"></i> 金融科技</span>
+            <span class="industry-tag"><i class="fas fa-shopping-cart"></i> 跨境电商</span>
+            <span class="industry-tag"><i class="fas fa-solar-panel"></i> 新能源</span>
+            <span class="industry-tag"><i class="fas fa-heartbeat"></i> 医疗健康</span>
+            <span class="industry-tag"><i class="fas fa-smile"></i> 社交APP</span>
+            <span class="industry-tag"><i class="fas fa-plane"></i> 旅游服务</span>
+            <span class="industry-tag"><i class="fas fa-truck"></i> 物流运输</span>
+            <span class="industry-tag"><i class="fas fa-chalkboard-user"></i> 在线教育</span>
+            <span class="industry-tag"><i class="fas fa-industry"></i> 智能制造</span>
+        </div>
+
+        <!-- 客户证言 -->
+        <div class="section-header fade-up">
+            <h2>客户成功故事</h2>
+            <p>数千外贸企业见证搜索排名提升与业绩倍增</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-up"><div class="testimonial-header"><div class="avatar">李</div><div><strong>电子配件出口商</strong></div></div><p>"火柴AI帮我们谷歌搜索排名冲上首页，3个月获取200+欧洲客户，订单量+150%"</p><h4>— 李总</h4></div>
+            <div class="testimonial-card fade-up"><div class="testimonial-header"><div class="avatar">张</div><div><strong>时尚家居品牌</strong></div></div><p>"TikTok矩阵+搜索优化，粉丝增长12w，独立站月转化300+订单，复购率飙升"</p><h4>— 张经理</h4></div>
+            <div class="testimonial-card fade-up"><div class="testimonial-header"><div class="avatar">王</div><div><strong>医疗器械公司</strong></div></div><p>"AI客服+搜索排名双管齐下，WhatsApp Shop月GMV突破200万美金，询盘增长270%"</p><h4>— 王总</h4></div>
+            <div class="testimonial-card fade-up"><div class="testimonial-header"><div class="avatar">陈</div><div><strong>工业机械厂家</strong></div></div><p>"社媒聚合矩阵+SEO优化，精准触达中东客户，询盘量增长270%，成本降低40%"</p><h4>— 陈总</h4></div>
+        </div>
+
+        <!-- CTA -->
+        <div id="contact" class="cta fade-up">
+            <h2>免费获取外贸获客诊断 + 搜索排名方案</h2>
+            <p>立即联系官方顾问，获取专属优化策略与产品演示</p>
+            <a href="https://t.me/aiclawchuhai" target="_blank" rel="noopener noreferrer" class="telegram-btn">
+                <i class="fab fa-telegram fa-lg"></i> 联系 Telegram @aiclawchuhai
+            </a>
+            <div class="copy-area">
+                <span class="tg-badge">@aiclawchuhai</span>
+                <button id="copyBtn" class="copy-btn"><i class="fas fa-copy"></i> 复制账号</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 火柴AI · 外贸获客软件 | AI驱动全球增长</p>
+        <p>官方咨询：Telegram @aiclawchuhai</p>
+    </footer>
+</div>
+
+<script>
+    // 仙雾粒子
+    const canvas = document.getElementById('mist-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+    function initParticles() {
+        const count = 80;
+        for (let i = 0; i < count; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                radius: 40 + Math.random() * 120,
+                alpha: 0.1 + Math.random() * 0.2,
+                speedX: (Math.random() - 0.5) * 0.15,
+                speedY: (Math.random() - 0.5) * 0.08,
+            });
+        }
+    }
+    function drawMist() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(201, 168, 124, ${p.alpha * 0.4})`;
+            ctx.fill();
+            p.x += p.speedX;
+            p.y += p.speedY;
+            if (p.x + p.radius < 0) p.x = width + p.radius;
+            if (p.x - p.radius > width) p.x = -p.radius;
+            if (p.y + p.radius < 0) p.y = height + p.radius;
+            if (p.y - p.radius > height) p.y = -p.radius;
+        });
+        requestAnimationFrame(drawMist);
+    }
+    resizeCanvas();
+    initParticles();
+    drawMist();
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        particles = [];
+        initParticles();
+    });
+    
+    // 鼠标光晕
+    const glow = document.getElementById('cursorGlow');
+    document.addEventListener('mousemove', (e) => {
+        glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+    
+    // 滚动进度条
+    window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('scrollProgress').style.width = scrolled + '%';
+    });
+    
+    // 滚动动画
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), index * 80);
+            }
+        });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => observer.observe(el));
+    
+    // 数字滚动
+    const stats = document.querySelectorAll('.stat-number');
+    let animated = false;
+    function animateNumbers() {
+        if (animated) return;
+        animated = true;
+        stats.forEach(stat => {
+            const target = parseFloat(stat.getAttribute('data-target'));
+            let current = 0;
+            const duration = 1600;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = target / steps;
+            let count = 0;
+            const timer = setInterval(() => {
+                count++;
+                current += increment;
+                if (count >= steps) {
+                    stat.innerText = target % 1 === 0 ? Math.floor(target) : target.toFixed(1);
+                    clearInterval(timer);
+                } else {
+                    stat.innerText = Math.floor(current);
+                }
+            }, stepTime);
+        });
+    }
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) animateNumbers();
+    }, { threshold: 0.3 });
+    const statsSection = document.getElementById('statsCounter');
+    if (statsSection) statsObserver.observe(statsSection);
+    
+    // 复制TG
+    const copyBtn = document.getElementById('copyBtn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText('@aiclawchuhai').then(() => {
+                const original = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> 已复制';
+                setTimeout(() => { copyBtn.innerHTML = original; }, 2000);
+            });
+        });
+    }
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#") return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
